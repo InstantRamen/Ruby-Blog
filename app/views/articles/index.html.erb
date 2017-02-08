@@ -8,6 +8,8 @@
       <small class="created-by">created by <%= article.author %></small>
     </li>
     <hr>
-  <% end %>
+  <% end
+  
+  <%= link_to "Create a New Article", new_article_path, class:"new_article" %>
   
 </ul>
