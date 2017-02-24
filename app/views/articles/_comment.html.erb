@@ -1,0 +1,6 @@
+
+<p class="comment">
+  <span class="comment-author"><%= comment.author_name %></span><br>
+  <span class="comment-body"><%= comment.body %></span>
+  <div class="timestamp"> <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</div>
+</p>
