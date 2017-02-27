@@ -4,8 +4,9 @@
 
   <li>
   <%= link_to tag.name, tag_path(tag) %>
-
+  <% if logged_in? %>
   <%= link_to "(delete)", tag_path(tag), method: :delete, data: {confirm: "You are about to delete the tag. Are you sure you want to continue? This action cannot be undone!"} %> 
+  <% end %>
   </li>
   <% end %>
 </ul>

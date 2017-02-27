@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
+  before_filter :require_login, only: [:create, :edit, :update, :destroy]
+
   include ArticlesHelper
+
+
     def index
       @articles = Article.all
     end
@@ -17,6 +21,7 @@ class ArticlesController < ApplicationController
     
     def create
       @article = Article.new(article_params)
+      @article.author = current_user.username
       @article.save
       
       flash.notice = "Article '#{@article.title}' has been create!"
