@@ -1,0 +1,6 @@
+<h1>Tags:</h1>
+<ul>
+  <% @tags.each do |tag| %>
+  <li><%= link_to tag.name, tag_path(tag) %> <%= link_to "(delete)", tag_path(tag), method: :delete, data: {confirm: "You are about to delete the tag. Are you sure you want to continue? This action cannot be undone!"} %> </li>
+  <% end %>
+</ul>

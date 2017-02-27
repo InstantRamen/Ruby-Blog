@@ -1,4 +1,10 @@
 <h1><%= @article.title %> </h1>
+<p>
+	Tags:
+	<% @article.tags.each do |tag| %>
+		<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
+</p>
 <p> <%= @article.body  %> </p>
 <small>by <%= @article.author %></small><br><br>
 <%= link_to "<< List of Articles", articles_path %>
